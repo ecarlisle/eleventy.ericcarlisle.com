@@ -1,0 +1,33 @@
+---
+layout: base
+---
+            <article role="article">
+              <div class="eyebrow | flex">
+                <strong class="mr1">Article</strong>
+                <strong class="mr1">:</strong>
+                <time datetime="2020-12-20 08:00+08:00">December 20, 2020</time>
+              </div>
+              <h2>{{ title }}</h2>
+              
+
+              {{ content | safe }}
+
+            </article>
+          </li>
+        </ul>
+        <!--
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = [canonical_url];  
+            this.page.identifier = [slug]; 
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://carlisle.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        -->
+

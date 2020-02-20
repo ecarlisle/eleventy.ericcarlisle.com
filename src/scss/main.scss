@@ -1,0 +1,105 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'utility';
+@import 'prism';
+
+// ---------- Font Faces ----------
+@include fontface(exo2, 'exo2-semibold', 600, normal);
+@include fontface(exo2, 'exo2-regular', 400, normal);
+@include fontface(opensans, 'opensans-regular', 400 , normal);
+@include fontface(opensans, 'opensans-bold', 700, normal);
+@include fontface(opensans, 'opensans-italic', 400, italic);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  font: 1.6rem/1.15 opensans, sans-serif;
+}
+
+// ---------- Wrappers ----------
+.wrap {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+// ---------- Page Header ----------
+.banner {
+  margin: 0 0 2rem 0;
+  padding: 2rem 0 0 1rem;
+  .title {
+    font: 600 3.4rem/1 'exo2', serif;
+  }
+  .subtitle {
+    font: 600 2.4rem/1 'exo2', serif;
+  }
+  nav ul  {
+    li {
+      font: 600 1.6rem/1 'exo2', serif;
+      padding: 1rem;
+    }
+  }
+}
+
+// ---------- Page Main ----------
+main[role='main'] {
+  flex: 0 1 75%;
+  padding: 1rem 1rem 1rem 2rem;
+}
+
+// ---------- Page Aside ----------
+aside {
+  display: none;
+  flex: 0 1 25%;
+  padding: 1rem;
+  text-align: center;
+  @include breakpoint('md') {
+    display: flex;
+  }
+}
+
+// ---------- Page Footer ----------
+footer {
+  margin: 2rem 0 0 0;
+  padding: 1rem;
+}
+
+h2 {
+  font: 600 2rem/1 opensans, sans-serif;
+  @include fluid-range(font-size, 18px, 26px);
+  @include fluid-range(line-height, 1.15, 1.5);
+  margin: 0 0 1rem 0;
+}
+
+// ---------- Grid ----------
+.grid {
+  display: flex;
+}
+
+// ---------- Page Elements ----------
+
+pre {
+  margin: 10rem 0;
+}
+
+.eyebrow {
+  @include fluid-range(font-size, 12px, 16px);
+  margin: 0 0 1rem 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  &.skip-to-main {
+    position: absolute;
+    left:-9999px;
+  }
+}
+

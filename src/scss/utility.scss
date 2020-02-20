@@ -1,0 +1,52 @@
+// ---------- Flexbox ----------
+.flex {
+  display: flex;
+}
+
+// --- Justify Content
+.jc-flex-end {
+  justify-content: flex-end; 
+}
+
+// ---------- Text Alignment ----------
+.right {
+  text-align: right;
+}
+
+// ---------- Margins ----------
+.mb1 {
+  margin-bottom: 1rem;
+}
+.mb2 {
+  margin-bottom: 2rem;
+}
+
+.mr1 {
+  margin-right: 1rem;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+// ---------- Borders ----------
+.bb1 {
+  border: 1px solid #369;
+  border-width: 0 0 1px
+  
+   0;
+}
+
+.bt1 {
+  border: 1px solid #369;
+  border-width: 1px 0 0 0;
+}
+
+// ---------- Display ----------
+.db {
+  display: block;
+}
+
+.dib {
+  display: inline-block;
+}

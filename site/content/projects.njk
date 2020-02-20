@@ -1,0 +1,20 @@
+---
+date: "2016-01-01T06:00-06:00"
+description: "Projects"
+slug: projects
+permalink: "projects/index.html"
+layout: base
+---
+<ul>
+{%- for post in collections.projects -%}
+  <li>
+    <a href="{{ post.url }}">
+      <h2>{{ post.data.title }}</h2>
+    </a>
+    {{ post.data.date }}
+
+
+    {{ post.content | safe }}
+  </li>
+{%- endfor -%}
+</ul>

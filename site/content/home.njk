@@ -1,0 +1,17 @@
+---
+description: "This is the description"
+slug: Home
+permalink: "index.html"
+layout: base
+---
+<ul role="list" class="article-list |">
+{%- for post in collections.post -%}
+  <li role="listitem">
+    <article role="article">
+      <a href="{{ post.url }}" class="" style="text-decoration: none; color: #222">
+        <h2>{{ post.data.title }}</h2>
+      </a>
+      {{ post.data.date | dateFormat }}
+    </article>
+  </li>
+{%- endfor -%}

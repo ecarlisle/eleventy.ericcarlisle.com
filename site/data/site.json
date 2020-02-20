@@ -1,0 +1,36 @@
+{
+  "name": "Eric Carlisle : UI Developer, UX Designer",
+  "title": "Eric Carlisle : UI Developer, UX Designer",
+  "description": "This is Eric Carlisle's blog.",
+  "publisher": "Eric Carlisle",
+  "url": "https://www.ericcarlisle.com",
+  "socialPages": [
+    "https://github.com/ecarlisle",
+    "https://twitter.com/eric_carlisle",
+    "https://www.linkedin.com/in/ericcarlisle"
+  ],
+  "navigation": {
+    "top": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Articles",
+        "url": "/articles/"
+      },
+      {
+        "name": "Presentations",
+        "url": "/presentations/"
+      },
+      {
+        "name": "Projects",
+        "url": "/projects/"
+      },
+      {
+        "name": "Contact",
+        "url": "/contact/"
+      }
+    ]
+  }
+}
