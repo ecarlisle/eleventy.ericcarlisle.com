@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "npx @11ty/eleventy --watch",
-    "webpack": "npx webpack --mode development --config config/webpack.base.js --watch",
+    "webpack": "npx webpack --mode development --config webpack/webpack.base.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
