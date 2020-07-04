@@ -15,20 +15,20 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "autoprefixer": "^9.7.4",
-    "browserslist": "^4.8.3",
-    "css-loader": "^3.4.2",
+    "autoprefixer": "^9.8.4",
+    "browserslist": "^4.12.2",
+    "css-loader": "^3.6.0",
     "css-mqpacker": "^7.0.0",
-    "date-fns": "^2.9.0",
+    "date-fns": "^2.14.0",
     "fast-sass-loader": "^1.5.0",
-    "file-loader": "^5.0.2",
+    "file-loader": "^5.1.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "nunjucks-date": "^1.5.0",
     "postcss-loader": "^3.0.0",
     "resolve-url-loader": "^3.1.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-watched-glob-entries-plugin": "^2.1.5"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-watched-glob-entries-plugin": "^2.1.6"
   }
 }
