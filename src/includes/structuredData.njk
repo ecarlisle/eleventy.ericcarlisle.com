@@ -1,0 +1,71 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "{{ site.url }}",
+    "name": "{{ site.name }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "email": "eric.carlisle@gmail.com",
+    "description": "UI Developer, UX Strategist, Speaker, Mentor, Maker",
+    "name": "Eric Carlisle",
+    "image": "{{site.url}}{{site.image}}",
+    "alumniOf": [
+      {
+      "@type": "CollegeOrUniversity",
+      "name": "University of South Carolina",
+      "sameAs": "https://sc.edu/"
+      },
+      {
+      "@type": "CollegeOrUniversity",
+      "name": "Johns Hopkins Carey Business School",
+      "sameAs": "https://carey.jhu.edu/"
+      }
+    ],
+    "url": "http://www.ericcarlisle.com",
+    "sameAs" : [
+      "https://www.facebook.com/eric.carlisle",
+      "https://twitter.com/eric_carlisle",
+      "https://www.linkedin.com/in/ericcarlisle/",
+      "https://github.com/ecarlisle",
+      "https://www.instagram.com/ericcarlisle/",
+      "https://www.thingiverse.com/ecarlisle/designs",
+      "https://www.tinkercad.com/users/cp60qc9UomJ-eric-carlisle"
+    ]
+  }
+</script>
+{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true, allowMissing: true }) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement":
+  [
+    {% for crumb in breadcrumbs %}
+    {
+      "@type": "ListItem",
+      "position": {{loop.index}},
+      "name": "{{crumb.title}}",
+      "@id": "{{site.url}}{{crumb.url}}"
+    }{%- if not loop.last %},{% endif -%}
+    {% endfor %}
+  ]
+}
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://www.ericcarlisle.com",
+    "logo": "http://www.ericcarlisle.com/images/eric-carlisle-800x800.png"
+  }
+</script>

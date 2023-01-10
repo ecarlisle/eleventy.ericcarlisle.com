@@ -1,0 +1,51 @@
+---
+date: "2022-12-02"
+description: "Schema.org BreadcrumbLists can be created in Eleventy using its navigation plugin."
+layout: post
+images:
+  - src: "./public/images/original/11ty-breadcrumbs.jpg"
+    alt: "Illustration of navigational breakcrumbs using the Eleventy logo."
+og_image:
+  alt: "The Eleventy logo"
+  height: 627
+  type: "image/png"
+  url: "/og/11ty-breadcrumbs.jpg"
+  width: 1200
+  og_type: "article"
+permalink: "/posts/creating-schema-org-breadcrumblist-with-eleventy/index.html"
+eleventyNavigation:
+  includeSelf: true
+  key: "Schema.org BreadcrumbLists with Eleventy"
+  parent: Posts
+tags:
+  - "posts"
+  - "schema.org"
+  - "breadcrumbs"
+  - "eleventy"
+title: "Creating a Schema.org BreadcrumbList in Eleventy"
+---
+<p>
+  <a href="https://www.11ty.dev/">Eleventy</a> has a very clever <a href="https://www.11ty.dev/docs/plugins/navigation/">Navigation Plugin</a> for rendering N-depth menus, breadcrumbs, and other navigational tools.
+
+
+
+
+  <a href="https://schema.org/BreadcrumbList">schema.org BreadcrumbList</a>. Including this structured data object on pages may enrich their experiences on Google Search Engine Result Pages (SERPs).
+</p>
+
+The plugin uses a simple set of page fields as relational data, allowing a lightweight, useful means of defining a site taxonomy. This data
+
+<!-- excerpt -->
+<p>
+  Google SERP Breadcrumbs can be seen atop a search result.
+</p>
+
+{% image
+  "./public/images/original/google-search-result-breadcrumbs.jpg",
+  "Google search result with Breadcrumbs highlighted",
+  "(min-width: 64em) 50vw, 100vw",
+  [400, 800]
+%}
+
+
+<!-- excerpt -->

@@ -1,0 +1,51 @@
+---
+date: "2022-11-05"
+description: "Blog posts for Eric Carlisle."
+layout: section
+eleventyNavigation:
+  key: "Posts"
+  order: 2
+og_image:
+  alt: "Eric Carlisle : UI Developer, UX Strategist"
+  height: 800
+  type: "image/png"
+  url: "/images/og/eric-carlisle-800x800.png"
+  width: 800
+og_type: blog
+pagination:
+  data: collections.posts
+  size: 20
+  alias: pages
+permalink: /posts/index.html
+tags:
+  - "section"
+title: "Posts"
+---
+<hr/>
+<ul class="article-list">
+  {%- for page in pages | reverse -%}
+  <li>
+    <article>
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      <h2>
+        <a href="{{ page.url }}">{{ page.data.title }}</a>
+      </h2>
+      <div class="content">
+        <a href="{{ page.url }}">
+            {% image page.data.images[0].src, page.data.images[0].alt, "400px", [400, 800], page.data.tags[0] %}
+        </a>
+        <div>
+        {{ page.data.excerpt | safe }}
+          <ul class="tags" aria-label="article hashtags">
+            {%- for tag in page.data.tags %}
+              {% if tag !== "posts" %}
+              <li>#{{ tag }}</li>
+              {% endif %}
+            {% endfor -%}
+          </ul>
+        </div>
+      </div>
+    </article>
+  </li>
+  {%- endfor -%}
+</ul>

@@ -1,0 +1,104 @@
+---
+date: "2022-11-05"
+description: "This is a 3D print of trading card box I modeled."
+layout: post
+images:
+  - src: "./public/images/original/card-collection-box-250mm_open.jpg"
+    alt: "Trading card container aside the container top."
+  - src: "./public/images/original/card-collection-box-250mm_closed.jpg"
+    alt: "Trading card container and top assembled."
+  - src: "./public/images/original/card-collection-box-250mm_card-fit.jpg"
+    alt: "Example of sleeved cards fitting within the container."
+og_image:
+  alt: "Trading Card Box: 250mm depth, top loading"
+  height: 627
+  type: "image/jpeg"
+  url: "/images/og/card-collection-box-250mm_open.jpg"
+  width: 1200
+og_type: "article"
+permalink: "/3d-prints/250mm-trading-card-box/index.html"
+eleventyNavigation:
+includeSelf: true
+key: "250mm Trading Card Box"
+parent: Posts
+tags:
+- "3d-prints"
+- "posts"
+title: "250mm Trading Card Box, a 3D Print"
+---
+<p>
+  I made this top-load trading card box to store <a href="https://magic.wizards.com/" target="_blank"
+    rel="noopener noreferrer">Magic: The Gathering</a> cards I collected from centuries past. It will store around 800
+  cards and will fit cards having light sleeves. The lift-off lid has a 0.6mm width and length clearance gap from the
+  main container, providing a comfortable fit. All walls are 1.2mm, giving it adequate strength with minimal material
+  usage.</p>
+<!-- excerpt -->
+<p>The depth is 250mm, so a printer with a larger bed is needed. I plan to create smaller models for smaller beds.</p>
+
+<section>
+  <div class="photo-stack">
+  {%- for img in images -%}
+    {% image img.src, img.alt, "400px", [400, 800] %}
+  {%- endfor -%}
+  </div>
+  <ul class="icon-list">
+    <li>
+      <svg width="24" height="24" viewBox="0 0 32 32">
+        <use href="#icon-social-youtube"></use>
+      </svg>
+      <a href="https://youtu.be/_tiRKn5gV28">
+        Timelapse video using Octolapse
+      </a>
+    </li>
+    <li>
+      <svg width="24" height="24" viewBox="0 0 32 32">
+        <use href="#icon-social-thingiverse"></use>
+      </svg>
+      <a href="https://www.tinkercad.com/things/lp2lejdRMKj">
+        STL files at Thingiverse
+      </a>
+    </li>
+    <li>
+      <svg width="24" height="24" viewBox="0 0 32 32">
+        <use href="#icon-social-tinkercad"></use>
+      </svg>
+      <a href="https://www.tinkercad.com/things/lp2lejdRMKj">
+        Editable model at Tinkercad
+      </a>
+    </li>
+  </ul>
+</section>
+<hr />
+<section>
+  <h2>Estimated Resources</h2>
+  <ul class="formatted">
+    <li><strong>Print Time:</strong> 16hrs, 51min (with 50mm/s print speed)</li>
+    <li><strong>Material Use:</strong> 139g, 46.48m</li>
+  </ul>
+  <p>
+    <em>(sliced with <a href="https://ultimaker.com/software/ultimaker-cura" target="_blank"
+        rel="noopener noreferrer">Cura 5.1</a>)
+    </em>
+  </p>
+</section>
+<hr />
+<section>
+  <h2>Recommmended Print Settings</h2>
+  <ul class="formatted">
+    <li><strong>Resolution:</strong> 0.2mm</li>
+    <li><strong>Support:</strong> none</li>
+    <li><strong>Infill:</strong> 20%</li>
+    <li><strong>Raft/Brim:</strong> none</li>
+    <li><strong>Vertical Walls:</strong> 4</li>
+    <li><strong>Horizontal Walls:</strong> 3</li>
+  </ul>
+</section>
+<hr />
+<section>
+  <h2>Printed With</h2>
+  <ul class="formatted">
+    <li><strong>Printer:</strong> <a href="https://www.creality3dofficial.com/products/creality-3d-cr-10-v2-3d-printer"
+        target="_blank" rel="noopener noreferrer">Creality CR-10 v2</a></li>
+    <li><strong>Filament:</strong> Hatchbox PLA, 1.75mm (white)</li>
+  </ul>
+</section>
