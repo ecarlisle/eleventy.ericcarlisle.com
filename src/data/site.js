@@ -1,6 +1,10 @@
 module.exports = {
 	description: "This is blog for Eric Carlisle, a UI, UX Engineer.",
-	environment: process.env.ENVIRONMENT || "development",
+	environment: process.env.ELEVENTY_ENV || "development",
+	github: {
+		repository: "https://github.com/ecarlisle/eleventy.ericcarlisle.com",
+		branch: "/blob/main/",
+	},
 	image: "/images/eric-carlisle-800x800.png",
 	name: "Eric Carlisle : UI, UX Engineer",
 	lang: "en",
@@ -9,7 +13,7 @@ module.exports = {
 	title: "Eric Carlisle : UI, UX Engineer",
 	url: "https://www.ericcarlisle.com",
 	hostname:
-		process.env.ENVIRONMENT === "production"
+		process.env.ELEVENTY_ENV === "production"
 			? "https://www.ericcarlisle.com"
 			: "http://localhost:3000",
 	favicon: {},
