@@ -25,8 +25,8 @@
     <title>{{ title }}</title>
     <meta name="description" content="{{description}}">
 
+    {%- if site.environment === 'production' -%}
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    {%- if site.mode == 'production' -%}
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-34545855-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -68,10 +68,7 @@
     <meta name="twitter:image:alt" content="{{og_image.alt}}">
 
     <!-- Stylesheet (TODO : Inline CSS) -->
-    {%- if process.env.ENVIRONMENT === "production" %}
-    {%- else -%}
     <link rel="stylesheet" href="/@root/style/global.scss"> {{ __slinkity.head | safe }}
-    {%- endif -%}
 
     <!-- TODO: Structured Data -->
     {%- include "../includes/structuredData.njk" -%}
@@ -139,13 +136,14 @@
   </div>
   <footer class="primary">
     <div class="wrapper">
-      <span>
-        Built with <a href="https://11ty.dev" aria-label="11ty">
-        <svg width="24" height="24" viewBox="0 0 15694 15694" xmlns="http://www.w3.org/2000/svg"  style="vertical-align: middle">
-          <use href="#icon-11ty"></use>
-        </svg>
-      </a>
-      </span>
+      <ul>
+        <li>
+          Built with
+            <a href="https://11ty.dev" aria-label="11ty"><svg width="24" height="24" viewBox="0 0 15694 15694" xmlns="http://www.w3.org/2000/svg"  style="vertical-align: middle">
+            <use href="#icon-11ty" />
+            </svg></a>
+          </li>
+        </ul>
       <span>
         © Copyright 2023 Eric Carlisle
       </span>
