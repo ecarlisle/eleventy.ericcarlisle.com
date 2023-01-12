@@ -1,3 +1,5 @@
 node_modules
 _site
 .vscode
+.DS_Store
+**/**.tmp
