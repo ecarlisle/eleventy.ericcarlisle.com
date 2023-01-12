@@ -3,8 +3,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
-const slinkity = require("slinkity");
-const react = require("@slinkity/renderer-react");
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 async function imageShortcode(
 	src,
@@ -50,19 +49,9 @@ async function imageShortcode(
 
 module.exports = function (eleventyConfig) {
 	// Plugins
-	eleventyConfig.addPlugin(
-		slinkity.plugin,
-		slinkity.defineConfig({
-			renderers: [react],
-			server: {
-				https: false,
-				host: "localhost",
-				port: 3000,
-			},
-		}),
-	);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+	eleventyConfig.addPlugin(UpgradeHelper);
 
 	// Frontmatter
 	eleventyConfig.setFrontMatterParsingOptions({
