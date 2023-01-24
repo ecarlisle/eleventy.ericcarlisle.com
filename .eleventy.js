@@ -1,9 +1,11 @@
 const { DateTime } = require("luxon");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 async function imageShortcode(
 	src,
@@ -16,14 +18,13 @@ async function imageShortcode(
 		widths: widths,
 		formats: ["webp", "avif", "jpeg"],
 		urlPath: "/images/posts",
-		outputDir: "./public/images/posts",
+		outputDir: "./_site/images/posts",
 		filenameFormat: function (id, src, width, format, options) {
 			const extension = path.extname(src);
 			const name = path.basename(src, extension);
 			return `${name}_${width}w.${format}`;
 		},
 	});
-
 	const lowsrc = metadata.jpeg[0];
 	const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
@@ -48,10 +49,29 @@ async function imageShortcode(
 }
 
 module.exports = function (eleventyConfig) {
+	// Server Options
+	eleventyConfig.setServerOptions({
+		liveReload: true,
+		domDiff: true,
+		port: 3000,
+		watch: [],
+		encoding: "utf-8",
+	});
+
 	// Plugins
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
-	eleventyConfig.addPlugin(UpgradeHelper);
+	eleventyConfig.addPlugin(syntaxHighlight);
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(pluginWebc, {
+		components: "./src/components/webc/*.webc",
+
+		// Adds an Eleventy WebC transform to process all HTML output
+		// useTransform: false,
+
+		// Additional global data used in the Eleventy WebC transform
+		// transformData: {},
+	});
 
 	// Frontmatter
 	eleventyConfig.setFrontMatterParsingOptions({
@@ -64,7 +84,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode("minifyJson", (json) => {
 		return JSON.stringify(JSON.parse(json));
 	});
-
 	eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
 	// Filters
@@ -79,20 +98,31 @@ module.exports = function (eleventyConfig) {
 		);
 	});
 
+	// Passthrough configuration
+	// https://www.11ty.dev/docs/copy/#passthrough-during-serve
+	eleventyConfig.setServerPassthroughCopyBehavior("copy");
+
 	// Passthroughs
-	eleventyConfig.addPassthroughCopy("public");
-	/*eleventyConfig.addPassthroughCopy({
-		"node_modules/yet-another-react-lightbox/dist/styles.css":
-			"public/style/lightbox.scss",
-	});*/
-	// Layout aliases
-	eleventyConfig.addLayoutAlias("base", "base.njk");
-	eleventyConfig.addLayoutAlias("section", "section.njk");
-	eleventyConfig.addLayoutAlias("post", "post.njk");
+	eleventyConfig.addPassthroughCopy("src/site.webmanifest");
+	eleventyConfig.addPassthroughCopy("src/browserconfig.xml");
+	eleventyConfig.addPassthroughCopy("src/mstile-150x150.png");
+	eleventyConfig.addPassthroughCopy("src/favicon-*.png");
+	eleventyConfig.addPassthroughCopy("src/css/main.css");
+	// eleventyConfig.addPassthroughCopy("src/fonts/*");
+	eleventyConfig.addPassthroughCopy("src/images/og/*");
+	eleventyConfig.addPassthroughCopy("src/images/profile/*");
+	eleventyConfig.setServerOptions({
+		liveReload: true,
+		domDiff: true,
+		port: 8080,
+		watch: ["_site/global.css"],
+		showAllHosts: false,
+		encoding: "utf-8",
+	});
 
 	return {
 		// Control which files Eleventy will process
-		templateFormats: ["njk", "txt", "xml"],
+		templateFormats: ["njk", "txt", "xml", "webc"],
 
 		// Pre-process *.md and *.html files with Nunjucks.
 		markdownTemplateEngine: "njk",

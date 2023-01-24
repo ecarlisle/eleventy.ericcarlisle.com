@@ -9,6 +9,7 @@
     <link rel="preconnect" href="/fonts/inter-regular.woff2">
     <link rel="preconnect" href="/fonts/inter-medium.woff2">
     <link rel="preconnect" href="/fonts/inter-semibold.woff2">
+    <link rel="preconnect" href="/fonts/robotomono-regular.woff2">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -40,7 +41,7 @@
     {%- endif -%}
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{site.hostname}}{{permalink}}" />
+    <link rel="canonical" href="{{site.hostname}}{{page.url}}" />
 
     <!-- fb: meta -->
     <meta property="fb:app_id" content="{{site.social.Facebook.appId}}" />
@@ -68,9 +69,16 @@
     <meta name="twitter:image:alt" content="{{og_image.alt}}">
 
     <!-- Stylesheet (TODO : Inline CSS) -->
-    <link rel="stylesheet" href="/@root/style/global.scss"> {{ __slinkity.head | safe }}
+  {% if site.environment === "production2" %}
+    {% set css %}
+      {% include "../css/main.css" %}
+    {% endset %}
+    <style>{{ css }}</style>
+  {% else %}
+    <link rel="stylesheet" href="/css/main.css">
+  {% endif %}
 
-    <!-- TODO: Structured Data -->
+    <!-- Structured Data -->
     {%- include "../includes/structuredData.njk" -%}
 
   </head>

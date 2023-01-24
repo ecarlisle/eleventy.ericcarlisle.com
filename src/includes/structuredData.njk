@@ -16,7 +16,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "email": "eric.carlisle@gmail.com",
-    "description": "UI Developer, UX Strategist, Speaker, Mentor, Maker",
+    "description": "UI Engineer, UX Strategist, Speaker, Mentor, Maker",
     "name": "Eric Carlisle",
     "image": "{{site.url}}{{site.image}}",
     "alumniOf": [
@@ -43,7 +43,7 @@
     ]
   }
 </script>
-{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true, allowMissing: true }) %}
+{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: false, allowMissing: true }) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +55,7 @@
       "@type": "ListItem",
       "position": {{loop.index}},
       "name": "{{crumb.title}}",
-      "@id": "{{site.url}}{{crumb.url}}"
+      "item": "{{site.url}}{{crumb.url}}"
     }{%- if not loop.last %},{% endif -%}
     {% endfor %}
   ]

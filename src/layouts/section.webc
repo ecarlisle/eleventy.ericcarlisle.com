@@ -1,0 +1,5 @@
+---
+layout: base.njk
+---
+<h1 webc:if="!isHome" @text="title"></h1>
+<template @raw="content" webc:nokeep></template>

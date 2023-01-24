@@ -1,0 +1,70 @@
+---
+date: "2023-01-11"
+description: "Schema.org BreadcrumbLists can be created in Eleventy using its navigation plugin."
+layout: post.njk
+images:
+  - src: "./public/images/original/11ty-breadcrumbs.jpg"
+    alt: "Illustration of navigational breakcrumbs using the Eleventy logo."
+og_image:
+  alt: "The Eleventy logo"
+  height: 627
+  type: "image/png"
+  url: "/og/11ty-breadcrumbs.jpg"
+  width: 1200
+  og_type: "article"
+eleventyNavigation:
+  includeSelf: false
+  key: "Schema.org BreadcrumbLists with Eleventy"
+  parent: Posts
+tags:
+  - "posts"
+  - "schema.org"
+  - "breadcrumbs"
+  - "eleventy"
+title: "Creating a Schema.org BreadcrumbList in Eleventy"
+---
+<p>
+  <a href="https://www.11ty.dev/">Eleventy</a> has a very powerful <a href="https://www.11ty.dev/docs/plugins/navigation/">Navigation Plugin</a> for rendering N-depth menus, breadcrumbs, and other navigational tools. "What other kids of navigation tools," you may ask? We can also use
+  the plugin to render JSON-LD for a page's <a href="https://schema.org/BreadcrumbList">schema.org BreadcrumbList</a>. Including this structured data on pages may enrich their experiences on Google Search Engine Result Pages (SERPs).
+</p>
+<!-- excerpt -->
+
+<p>
+  When BreadcrumbList data is available on an indexed page the breadcrumbs appear atop a Google search result:
+</p>
+
+{% image
+  "./public/images/original/google-search-result-breadcrumbs.jpg",
+  "Google search result with Breadcrumbs highlighted",
+  "(min-width: 64em) 50vw, 100vw",
+  [400, 800]
+%}
+
+<p>
+  Like a traditional webpage breadcrumb, the SERP breadcrumb provides a page's taxonomical
+  context to the site's root. Each "crumb" is also a hyperlink to respective parent pages,
+  providing the search result additional opportunities for organic traffic.
+</p>
+
+<p>
+  Though Google also supports breadcrumbs in Microdata and RDFa formats, I'll use JSON-LD
+  as per recommendation in their <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies#format">structured data general guidelines</a>. I also prefer
+  JSON-LD for simplicity as it's an "under the hood" solution that doesn't rely on binding
+  relational data with DOM structure.
+</p>
+
+<p>
+  Let's use this page for an example as all the code is available in this site's
+  <a href="{{site.github.repository}}">Github repository.</a> On a Google SERP, I would
+  expect the page's breadcrumbs to appear as follows.
+</p>
+
+{% highlight "text" %}
+https://www.ericcarlisle.com > posts > Creating a Schema.org BreadcrumbList in Eleventy
+{% endhighlight %}
+
+
+
+<!--
+  The plugin uses a simple set of page fields as relational data, allowing a lightweight, useful means of defining a site taxonomy. This data
+-->

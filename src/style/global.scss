@@ -1,0 +1,364 @@
+@use "sass:list";
+@use "sass:map";
+@use "./reset.scss";
+@use "./ds.scss" as *;
+@use "./utility.scss";
+@use "./mixins" as *;
+@use "./prism.css";
+
+body {
+	background: color(white);
+	color: color(black);
+	font: list.slash(font-size(4), line-height(6)) font-family(content);
+	margin: 0 auto;
+}
+
+h1 {
+	font: list.slash(font-size(6), line-height(6)) font-family(headings);
+	margin-bottom: spacing(2);
+	@include mq("md") {
+		font-size: font-size(7);
+		margin-bottom: spacing(2);
+	}
+	@include mq("lg") {
+		font-size: font-size(8);
+		margin-bottom: spacing(3);
+	}
+}
+
+h2 {
+	font: list.slash(font-size(5), line-height(6)) font-family(headings);
+	margin-bottom: spacing(1);
+	@include mq("lg") {
+		font-size: font-size(6);
+		margin-bottom: spacing(4);
+	}
+
+	a {
+		color: map-get($colors, black);
+		text-decoration: none;
+		&:hover {
+			color: map-get($colors, black);
+			text-decoration: none;
+		}
+	}
+}
+
+a {
+	color: color(blue, 700);
+	text-decoration: underline;
+	text-decoration-color: color(blue, 300);
+	text-underline-offset: spacing(2);
+	&:hover {
+		color: color(blue, 500);
+		text-decoration: underline;
+		text-decoration-color: color(blue, 300);
+	}
+}
+
+#icon-html-open,
+#icon-html-close {
+	fill: none;
+	path {
+		stroke: color(blue, 400);
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: $max-content-width;
+}
+
+@include mq("lg") {
+	.main-content-wrapper {
+		display: grid;
+		grid-template-columns: 4fr 1fr;
+	}
+}
+
+header.primary {
+	background: color(blue, 700);
+	border: solid 1px color(black);
+	border-width: 1 0;
+	color: color(white);
+	text-align: center;
+	@include mq("lg") {
+		text-align: left;
+	}
+
+	a {
+		color: color(white);
+		&:hover {
+			color: color(blue, 200);
+			text-decoration: none;
+		}
+	}
+	.wrapper {
+		@include mq("lg") {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: spacing(4);
+		}
+	}
+}
+
+.icon-html-open,
+.icon-html-close {
+	display: none;
+	@include mq("sm") {
+		display: inline;
+		height: font-size(3);
+		margin: spacing(2) spacing(2) 0;
+		width: auto;
+	}
+
+	@include mq("md") {
+		height: font-size(4);
+	}
+	@include mq("lg") {
+		height: font-size(5);
+	}
+}
+
+.main-logo {
+	color: color(white);
+	display: inline-block;
+	padding: spacing(4) spacing(2);
+	text-decoration: none;
+	text-shadow: 0 0 2px color(blue, 900);
+	@include mq("lg") {
+		padding: 0;
+	}
+
+	.title {
+		text-transform: lowercase;
+		font: list.slash(font-size(7), line-height(6)) font-family(site-title);
+		@include mq("md") {
+			font-size: font-size(7);
+		}
+		@include mq("lg") {
+			font-size: font-size(8);
+		}
+	}
+	.subtitle {
+		font: list.slash(font-size(5), line-height(6)) font-family(site-title);
+		text-transform: uppercase;
+		@include mq("md") {
+			font-size: font-size(6);
+		}
+		@include mq("lg") {
+			font-size: font-size(7);
+		}
+	}
+}
+
+nav.primary {
+	border-top: solid 1px color(white);
+	font: list.slash(font-size(4), line-height(6)) font-family(headings);
+	@include mq("lg") {
+		border-top: 0;
+		font-size: font-size(5);
+	}
+
+	ul {
+		display: flex;
+		justify-content: flex-end;
+
+		li {
+			&.active a {
+				text-decoration: underline;
+				text-decoration-color: color(blue, 300);
+			}
+			a {
+				color: color(white);
+				display: inline-block;
+				padding: spacing(3) spacing(4);
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+footer.primary {
+	background: color(blue, 700);
+	border: solid 1px color(black);
+	border-width: 1 0;
+	color: color(white);
+	font: list.slash(font-size(4), line-height(6)) font-family(headings);
+
+	a {
+		color: color(white);
+	}
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding: spacing(4);
+	}
+}
+
+.social-icons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	a {
+		text-decoration: none;
+	}
+	svg {
+		margin: spacing(4) spacing(3);
+	}
+}
+
+img.rounded {
+	border-radius: border-radius(4);
+}
+
+main {
+	padding: spacing(4);
+	@include mq("lg") {
+		padding: spacing(5);
+	}
+}
+
+aside {
+	padding: spacing(4) spacing(2);
+	text-align: center;
+	@include mq("lg") {
+		padding: spacing(4);
+	}
+}
+
+.profile-image img {
+	border: 2px solid color(neutral, 600);
+	border-radius: 10rem;
+	margin: 0 auto;
+	margin-top: spacing(4);
+	max-width: 256px;
+}
+
+hr {
+	border: solid 1px color(neutral, 200);
+	border-width: 0 0 1px 0;
+	margin: 0 0 spacing(4) 0;
+}
+
+p {
+	margin: 0 0 spacing(4);
+	@include mq("lg") {
+		line-height: line-height(7);
+	}
+}
+
+article {
+	border-width: 0 0 1px 0;
+
+	img {
+		border-radius: 1rem; // Need DS token
+	}
+
+	time {
+		color: color(amber, 900);
+		font-family: font-family(heading);
+	}
+
+	.tags ul li {
+		font-family: font-family(heading);
+		font-size: map-get($font-size, md);
+		padding: map-get($spacing, md) map-get($spacing, md) 0 0;
+	}
+}
+
+.article-list {
+	time {
+		display: block;
+		font-size: font-size(3);
+		margin: 0 0 spacing(2);
+	}
+	article {
+		border: solid 1px color(neutral, 200);
+		border-width: 0 0 1px 0;
+		margin: 0 0 spacing(4) 0;
+		padding: 0 0 spacing(4) 0;
+		@include mq("lg") {
+			padding: 0 0 spacing(5) 0;
+		}
+
+		img {
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 1rem; // Need DS token
+		}
+
+		ul.tags {
+			display: flex;
+			font-family: font-family(content);
+			font-size: font-size(3);
+			justify-content: flex-end;
+			li {
+				//color: color(amber, 900);
+				color: color(amber, 800);
+				padding: spacing(2) 0 0 spacing(2);
+			}
+		}
+
+		@include mq("md") {
+			.content {
+				display: inline-grid;
+				grid-template-columns: 1fr 2fr;
+			}
+			img {
+				margin: 0 1rem 0 0;
+				max-width: 400px;
+			}
+			p {
+				margin: 0 0 0 1rem;
+			}
+			ul.tags li {
+				padding: spacing(2) 0 0 spacing(3);
+			}
+		}
+	}
+}
+
+.photo-stack {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	img: {
+		max-width: 400px; // Use DS Metric
+	}
+	picture {
+		padding: spacing(3);
+	}
+	@include mq("lg") {
+		flex-direction: row;
+		padding-bottom: spacing(4);
+	}
+}
+
+ul.formatted {
+	margin: spacing(4) spacing(4) spacing(4) spacing(5);
+	li {
+		display: list-item;
+		list-style-type: square;
+		@include mq("lg") {
+			padding-bottom: spacing(3);
+		}
+	}
+}
+
+ul.icon-list {
+	margin: spacing(2) spacing(4) spacing(4) spacing(5);
+	li {
+		display: list-item;
+		padding-bottom: spacing(4);
+		svg {
+			margin-right: spacing(2);
+			vertical-align: middle;
+		}
+	}
+}

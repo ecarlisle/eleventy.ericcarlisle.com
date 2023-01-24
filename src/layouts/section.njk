@@ -1,8 +1,7 @@
 ---
-layout: base
+layout: base.njk
 ---
-{%- if permalink != "/" -%}
-<h1>{{ title }}</h1>
-{%- endif -%}
-
-{{ content | safe }}
+<article>
+  <h1>{{ title }} </h1>
+  {{ content | safe }}
+</article>
