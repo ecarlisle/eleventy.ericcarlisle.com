@@ -7,7 +7,7 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"prodbuild": "ELEVENTY_ENV=production npm-run-all -s clean webpack:build 11ty:build",
+		"build": "ELEVENTY_ENV=production npm-run-all -s clean webpack:build 11ty:build",
 		"11ty:build": "npx @11ty/eleventy --config .eleventy.js",
 		"11ty:serve": "npx @11ty/eleventy --config .eleventy.js --serve --incremental",
 		"clean": "rm -rf _site/**/*",
