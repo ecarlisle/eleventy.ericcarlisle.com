@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Blog for Eric Carlisle : UI, UX Engineer",
 	"engines": {
-		"node": ">=14.0.0"
+		"node": "v18.12.1"
 	},
 	"main": "index.js",
 	"scripts": {
