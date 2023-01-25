@@ -1,11 +1,5 @@
-name: "build and "deploy"
-
-concurrency: production
-
-on:
-  push:
-    branches:
-      - main
+name: Eleventy Build
+on: [push]
 
 jobs:
   build_deploy:
