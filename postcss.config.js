@@ -1,5 +1,4 @@
 /*eslint @typescript-eslint/no-var-requires:0*/
-
 module.exports = {
 	from: "style/global.scss",
 	map: false,

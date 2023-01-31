@@ -9,29 +9,44 @@
 body {
 	background: color(white);
 	color: color(black);
-	font: list.slash(font-size(4), line-height(6)) font-family(content);
+	font: 400 list.slash(font-size(4), line-height(6)) font-family(content);
 	margin: 0 auto;
 }
 
 h1 {
-	font: list.slash(font-size(6), line-height(6)) font-family(headings);
+	font: 600 list.slash(font-size(6), line-height(6)) font-family(headings);
 	margin-bottom: spacing(2);
 	@include mq("md") {
 		font-size: font-size(7);
-		margin-bottom: spacing(2);
 	}
 	@include mq("lg") {
 		font-size: font-size(8);
-		margin-bottom: spacing(3);
 	}
 }
 
 h2 {
-	font: list.slash(font-size(5), line-height(6)) font-family(headings);
+	font: 600 list.slash(font-size(5), line-height(6)) font-family(headings);
 	margin-bottom: spacing(1);
 	@include mq("lg") {
 		font-size: font-size(6);
-		margin-bottom: spacing(4);
+		margin-bottom: spacing(3);
+	}
+
+	a {
+		color: map-get($colors, black);
+		text-decoration: none;
+		&:hover {
+			color: map-get($colors, black);
+			text-decoration: none;
+		}
+	}
+}
+
+h3 {
+	font: 600 list.slash(font-size(4), line-height(6)) font-family(headings);
+	margin-bottom: spacing(1);
+	@include mq("lg") {
+		font-size: font-size(5);
 	}
 
 	a {
@@ -54,6 +69,10 @@ a {
 		text-decoration: underline;
 		text-decoration-color: color(blue, 300);
 	}
+}
+
+strong {
+	font-weight: 600;
 }
 
 #icon-html-open,
@@ -357,8 +376,30 @@ ul.icon-list {
 		display: list-item;
 		padding-bottom: spacing(4);
 		svg {
-			margin-right: spacing(2);
+			margin-right: spacing(3);
 			vertical-align: middle;
+		}
+	}
+}
+
+.resume {
+	.engagement {
+		.title {
+			display: inline-grid;
+			grid-template-columns: 2fr 1fr;
+			justify-content: space-around;
+			width: 100%;
+		}
+	}
+	ul {
+		margin: spacing(3) spacing(3) spacing(4) spacing(4);
+		li {
+			display: list-item;
+			list-style-type: square;
+			line-height: line-height(6);
+			@include mq("lg") {
+				padding-bottom: spacing(3);
+			}
 		}
 	}
 }

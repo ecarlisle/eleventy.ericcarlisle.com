@@ -31,6 +31,9 @@ module.exports = {
 		LinkedIn: {
 			url: "https://www.linkedin.com/in/ericcarlisle",
 		},
+		Twitter: {
+			url: "https://www.twitter.com/ecarlisle",
+		},
 		Instagram: {
 			url: "https://www.instagram.com/ericcarlisle/",
 		},

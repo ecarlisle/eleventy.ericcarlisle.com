@@ -111,6 +111,18 @@ module.exports = function (eleventyConfig) {
 	// eleventyConfig.addPassthroughCopy("src/fonts/*");
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
+	eleventyConfig.addPassthroughCopy("src/apis/urls.json");
+	eleventyConfig.addPassthroughCopy("src/android-chrome-*.png");
+
+	/*
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/speedlify-score.js": "js/speedlify-score.js",
+	});
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/speedlify-score.css": "style/speedlify-score.css",
+	});
+	*/
+
 	eleventyConfig.setServerOptions({
 		liveReload: true,
 		domDiff: true,

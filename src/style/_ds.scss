@@ -81,8 +81,15 @@ $border-radius: (
 }
 
 @font-face {
+	font-family: "exo2";
+	src: url("../fonts/exo2-semibold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
 	font-display: swap;
-	font-family: "inter-regular";
+	font-family: "inter";
 	font-style: normal;
 	font-weight: 400;
 	src: url("../fonts/inter-regular.woff2") format("woff2");
@@ -90,7 +97,7 @@ $border-radius: (
 
 @font-face {
 	font-display: swap;
-	font-family: "inter-medium";
+	font-family: "inter";
 	font-style: normal;
 	font-weight: 500;
 	src: url("../fonts/inter-medium.woff2") format("woff2");
@@ -98,7 +105,7 @@ $border-radius: (
 
 @font-face {
 	font-display: swap;
-	font-family: "inter-semibold";
+	font-family: "inter";
 	font-style: normal;
 	font-weight: 600;
 	src: url("../fonts/inter-semibold.woff2") format("woff2");
@@ -106,7 +113,49 @@ $border-radius: (
 
 @font-face {
 	font-display: swap;
-	font-family: "robotomono-regular";
+	font-family: "inter";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/inter-bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "poppins";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/poppins-regular.woff2") format("woff2");
+}
+
+/*
+@font-face {
+	font-display: swap;
+	font-family: "poppins";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../fonts/poppins-medium.woff2") format("woff2");
+}
+*/
+
+@font-face {
+	font-display: swap;
+	font-family: "poppins";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../fonts/poppins-semibold.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "poppins";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/poppins-bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "robotomono";
 	font-style: normal;
 	font-weight: 400;
 	src: url("../fonts/robotomono-regular.woff2") format("woff2");
@@ -114,15 +163,15 @@ $border-radius: (
 
 $font-families: (
 	site-title: (
-		"inter-semibold",
+		"exo2",
 		"sans-serif",
 	),
 	headings: (
-		"inter-medium",
+		"poppins",
 		"sans-serif",
 	),
 	content: (
-		"inter-regular",
+		"poppins",
 		sans-serif,
 	),
 	monospace: (

@@ -1,5 +1,5 @@
-@use 'sass:map';
-@use './ds.scss' as *;
+@use "sass:map";
+@use "./ds.scss" as *;
 
 @mixin mq($size) {
 	@media all and (min-width: map-get($breakpoints, $size)) {
