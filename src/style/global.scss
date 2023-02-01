@@ -153,7 +153,7 @@ header.primary {
 
 	.title {
 		text-transform: lowercase;
-		font: list.slash(font-size(7), line-height(6)) font-family(site-title);
+		font: 600 list.slash(font-size(7), line-height(6)) font-family(site-title);
 		@include mq("md") {
 			font-size: font-size(7);
 		}
@@ -162,7 +162,7 @@ header.primary {
 		}
 	}
 	.subtitle {
-		font: list.slash(font-size(5), line-height(6)) font-family(site-title);
+		font: 600 list.slash(font-size(5), line-height(6)) font-family(site-title);
 		text-transform: uppercase;
 		@include mq("md") {
 			font-size: font-size(6);

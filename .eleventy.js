@@ -49,15 +49,6 @@ async function imageShortcode(
 }
 
 module.exports = function (eleventyConfig) {
-	// Server Options
-	eleventyConfig.setServerOptions({
-		liveReload: true,
-		domDiff: true,
-		port: 3000,
-		watch: [],
-		encoding: "utf-8",
-	});
-
 	// Plugins
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
@@ -107,12 +98,11 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/browserconfig.xml");
 	eleventyConfig.addPassthroughCopy("src/mstile-150x150.png");
 	eleventyConfig.addPassthroughCopy("src/favicon-*.png");
-	eleventyConfig.addPassthroughCopy("src/css/main.css");
-	// eleventyConfig.addPassthroughCopy("src/fonts/*");
+	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
 	eleventyConfig.addPassthroughCopy("src/apis/urls.json");
-	eleventyConfig.addPassthroughCopy("src/android-chrome-*.png");
+	eleventyConfig.addPassthroughCopy("src/apis/urls.json");
 
 	/*
 	eleventyConfig.addPassthroughCopy({
@@ -126,7 +116,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		liveReload: true,
 		domDiff: true,
-		port: 8080,
+		port: 3000,
 		watch: ["_site/global.css"],
 		showAllHosts: false,
 		encoding: "utf-8",

@@ -81,7 +81,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-family: "exo2";
+	font-family: exo2;
 	src: url("../fonts/exo2-semibold.woff2") format("woff2");
 	font-weight: 600;
 	font-style: normal;
@@ -89,57 +89,15 @@ $border-radius: (
 
 @font-face {
 	font-display: swap;
-	font-family: "inter";
-	font-style: normal;
-	font-weight: 400;
-	src: url("../fonts/inter-regular.woff2") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "inter";
-	font-style: normal;
-	font-weight: 500;
-	src: url("../fonts/inter-medium.woff2") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "inter";
-	font-style: normal;
-	font-weight: 600;
-	src: url("../fonts/inter-semibold.woff2") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "inter";
-	font-style: normal;
-	font-weight: 700;
-	src: url("../fonts/inter-bold.woff2") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "poppins";
+	font-family: poppins;
 	font-style: normal;
 	font-weight: 400;
 	src: url("../fonts/poppins-regular.woff2") format("woff2");
 }
 
-/*
 @font-face {
 	font-display: swap;
-	font-family: "poppins";
-	font-style: normal;
-	font-weight: 500;
-	src: url("../fonts/poppins-medium.woff2") format("woff2");
-}
-*/
-
-@font-face {
-	font-display: swap;
-	font-family: "poppins";
+	font-family: poppins;
 	font-style: normal;
 	font-weight: 600;
 	src: url("../fonts/poppins-semibold.woff2") format("woff2");
@@ -147,15 +105,7 @@ $border-radius: (
 
 @font-face {
 	font-display: swap;
-	font-family: "poppins";
-	font-style: normal;
-	font-weight: 700;
-	src: url("../fonts/poppins-bold.woff2") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "robotomono";
+	font-family: robotomono;
 	font-style: normal;
 	font-weight: 400;
 	src: url("../fonts/robotomono-regular.woff2") format("woff2");
@@ -163,19 +113,19 @@ $border-radius: (
 
 $font-families: (
 	site-title: (
-		"exo2",
+		exo2,
 		"sans-serif",
 	),
 	headings: (
-		"poppins",
+		poppins,
 		"sans-serif",
 	),
 	content: (
-		"poppins",
+		poppins,
 		sans-serif,
 	),
 	monospace: (
-		"robotomono-regular",
+		robotomono,
 		monospace,
 	),
 );

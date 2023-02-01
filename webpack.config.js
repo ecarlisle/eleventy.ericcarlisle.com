@@ -61,7 +61,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: "../_site/css/main.css",
+			filename: "../dist/css/main.css",
 			linkType: false,
 		}),
 	],

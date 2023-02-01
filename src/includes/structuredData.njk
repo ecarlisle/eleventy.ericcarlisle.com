@@ -43,7 +43,6 @@
     ]
   }
 </script>
-<script>console.log({{ isHome }})</script>
 {% if isHome === false %}
 {% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: false, allowMissing: true }) %}
 <script type="application/ld+json">

@@ -71,15 +71,15 @@
     <!-- Stylesheet (TODO : Inline CSS) -->
   {% if site.environment === "production" %}
     {% set css %}
-      {% include "../css/main.css" %}
+      {% include "../../dist/css/main.css" %}
     {% endset %}
     <style>{{ css }}</style>
   {% else %}
     <link rel="stylesheet" href="/css/main.css">
   {% endif %}
 
-    <!-- Structured Data -->
-    {%- include "../includes/structuredData.njk" -%}
+  <!-- Structured Data -->
+  {%- include "../includes/structuredData.njk" -%}
 
   </head>
 <body>
