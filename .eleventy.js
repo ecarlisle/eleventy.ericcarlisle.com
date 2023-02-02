@@ -118,7 +118,7 @@ module.exports = function (eleventyConfig) {
 		liveReload: true,
 		domDiff: true,
 		port: 3000,
-		watch: ["_site/global.css"],
+		watch: ["dist/css/main.css"],
 		showAllHosts: false,
 		encoding: "utf-8",
 	});

@@ -129,8 +129,9 @@ header.primary {
 	@include mq("sm") {
 		display: inline;
 		height: font-size(3);
-		margin: spacing(2) spacing(2) 0;
+		margin: 0 spacing(3);
 		width: auto;
+		opacity: 0.5;
 	}
 
 	@include mq("md") {
@@ -380,6 +381,10 @@ ul.icon-list {
 			vertical-align: middle;
 		}
 	}
+}
+
+.blue-200 {
+	color: color(blue, 200);
 }
 
 .resume {
