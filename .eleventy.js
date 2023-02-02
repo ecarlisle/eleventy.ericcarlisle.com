@@ -98,6 +98,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/browserconfig.xml");
 	eleventyConfig.addPassthroughCopy("src/mstile-150x150.png");
 	eleventyConfig.addPassthroughCopy("src/favicon-*.png");
+	eleventyConfig.addPassthroughCopy("src/android-chrome-*.png");
 	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
