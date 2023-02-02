@@ -82,51 +82,47 @@ $border-radius: (
 
 @font-face {
 	font-family: "exo2";
-	src: url("../fonts/exo2-semibold.woff2") format("woff2");
+	src: url("../fonts/exo2-semibold.woff2") format(woff2);
 	font-weight: 600;
 	font-style: normal;
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "poppins";
+	font-family: poppins;
 	font-style: normal;
 	font-weight: 400;
-	src: url("../fonts/poppins-regular.woff2") format("woff2");
+	src: url("../fonts/poppins-regular.woff2") format(woff2);
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "poppins";
+	font-family: poppins;
 	font-style: normal;
 	font-weight: 600;
-	src: url("../fonts/poppins-semibold.woff2") format("woff2");
+	src: url("../fonts/poppins-semibold.woff2") format(woff2);
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "robotomono";
+	font-family: robotomono;
 	font-style: normal;
 	font-weight: 400;
-	src: url("../fonts/robotomono-regular.woff2") format("woff2");
+	src: url("../fonts/robotomono-regular.woff2") format(woff2);
 }
 
 $font-families: (
 	site-title: (
 		"exo2",
-		"sans-serif",
 	),
 	headings: (
-		"poppins",
-		"sans-serif",
+		poppins,
 	),
 	content: (
-		"poppins",
-		sans-serif,
+		poppins,
 	),
 	monospace: (
-		"robotomono",
-		monospace,
+		robotomono,
 	),
 );
 

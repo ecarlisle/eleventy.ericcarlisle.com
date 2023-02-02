@@ -54,7 +54,7 @@ module.exports = {
 		minimizer: [
 			new CssMinimizerPlugin({
 				minimizerOptions: {
-					preset: require.resolve("cssnano-preset-advanced"),
+					preset: require.resolve("cssnano-preset-default"),
 				},
 			}),
 		],
