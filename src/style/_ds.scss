@@ -81,6 +81,7 @@ $border-radius: (
 }
 
 @font-face {
+	font-display: swap;
 	font-family: "exo2";
 	src: url("../fonts/exo2-semibold.woff2") format(woff2);
 	font-weight: 600;
