@@ -15,7 +15,7 @@
 		"debug:dev": "ELEVENTY_ENV=development DEBUG=Eleventy* npm-run-all -p webpack:watch 11ty:serve",
 		"debug:prod": "ELEVENTY_ENV=production DEBUG=Eleventy* npm-run-all -p webpack:watch 11ty:serve",
 		"serve:dev": "ELEVENTY_ENV=development npm-run-all -p webpack:watch 11ty:serve",
-		"serve:prod": "ELEVENTY_ENV=production npm-run-all -p clean webpack:build 11ty:serve",
+		"serve:prod": "serve _site",
 		"test:prettier": "prettier --config .prettierrc.json --check **",
 		"webpack:build": "webpack --config webpack.config.js",
 		"webpack:watch": "webpack --config webpack.config.js --watch"
