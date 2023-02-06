@@ -5,7 +5,9 @@ const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const Image = require("@11ty/eleventy-img");
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const path = require("path");
+const react = require("@vitejs/plugin-react");
 
 async function imageShortcode(
 	src,
@@ -54,6 +56,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(EleventyVitePlugin, {
+		plugins: [react()],
+	});
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: "./src/components/webc/*.webc",
 
@@ -94,16 +99,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("copy");
 
 	// Passthroughs
-	eleventyConfig.addPassthroughCopy("src/site.webmanifest");
-	eleventyConfig.addPassthroughCopy("src/browserconfig.xml");
-	eleventyConfig.addPassthroughCopy("src/mstile-150x150.png");
-	eleventyConfig.addPassthroughCopy("src/favicon-*.png");
-	eleventyConfig.addPassthroughCopy("src/android-chrome-*.png");
 	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
-	eleventyConfig.addPassthroughCopy("src/apis/urls.json");
-	eleventyConfig.addPassthroughCopy("src/apis/urls.json");
+	eleventyConfig.addPassthroughCopy("src/images/eric-carlisle-logo.svg");
 
 	/*
 	eleventyConfig.addPassthroughCopy({
@@ -118,7 +117,7 @@ module.exports = function (eleventyConfig) {
 		liveReload: true,
 		domDiff: true,
 		port: 3000,
-		watch: ["dist/css/main.css"],
+		//		watch: ["dist/css/main.css"],
 		showAllHosts: false,
 		encoding: "utf-8",
 	});

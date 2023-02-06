@@ -10,7 +10,7 @@
 		"build": "ELEVENTY_ENV=production npm-run-all -s clean webpack:build log 11ty:build",
 		"11ty:build": "npx @11ty/eleventy --config .eleventy.js",
 		"11ty:serve": "npx @11ty/eleventy --config .eleventy.js --serve --incremental",
-		"clean": "rm -rf _site/**/*",
+		"clean": "rm -rf ./_site/**/*",
 		"log": "echo done",
 		"debug:dev": "ELEVENTY_ENV=development DEBUG=Eleventy* npm-run-all -p webpack:watch 11ty:serve",
 		"debug:prod": "ELEVENTY_ENV=production DEBUG=Eleventy* npm-run-all -p webpack:watch 11ty:serve",
@@ -28,6 +28,7 @@
 		"@11ty/eleventy-img": "^2.0.1",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+		"@11ty/eleventy-plugin-vite": "^4.0.0",
 		"@11ty/eleventy-plugin-webc": "^0.8.1",
 		"@11ty/is-land": "^3.0.0",
 		"@sherby/eleventy-plugin-files-minifier": "^1.1.1",
@@ -35,6 +36,7 @@
 		"@types/react-dom": "^18.0.10",
 		"@typescript-eslint/eslint-plugin": "^5.46.1",
 		"@typescript-eslint/parser": "^5.46.1",
+		"@vitejs/plugin-react": "^3.1.0",
 		"autoprefixer": "^10.4.13",
 		"css-loader": "^6.7.3",
 		"css-minimizer-webpack-plugin": "^4.2.2",
@@ -68,7 +70,6 @@
 	},
 	"dependencies": {
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"speedlify-score": "^2.0.2"
+		"react-dom": "^17.0.2"
 	}
 }
