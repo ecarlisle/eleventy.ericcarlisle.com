@@ -245,14 +245,21 @@ article {
 		font-family: font-family(heading);
 	}
 
-	.tags ul li {
-		font-family: font-family(heading);
-		font-size: map-get($font-size, md);
-		padding: map-get($spacing, md) map-get($spacing, md) 0 0;
+	.tags ul {
+		li {
+			font-family: font-family(heading);
+			font-size: map-get($font-size, md);
+			list-style-type: none;
+			padding: map-get($spacing, md) map-get($spacing, md) 0 0;
+		}
 	}
 }
 
-.article-list {
+ul.article-list {
+	li {
+		list-style-type: none;
+	}
+
 	time {
 		display: block;
 		font-size: font-size(3);
@@ -281,6 +288,7 @@ article {
 			li {
 				//color: color(amber, 900);
 				color: color(amber, 800);
+				list-style-type: none;
 				padding: spacing(2) 0 0 spacing(2);
 			}
 		}
@@ -342,6 +350,7 @@ ul.icon-list {
 	margin: spacing(2) spacing(4) spacing(4) spacing(5);
 	li {
 		display: list-item;
+		list-style-type: none;
 		padding-bottom: spacing(4);
 		svg {
 			margin-right: spacing(3);
