@@ -119,6 +119,7 @@ header.primary {
 		}
 		@include mq("lg") {
 			padding: 0;
+			margin: initial;
 		}
 	}
 }
