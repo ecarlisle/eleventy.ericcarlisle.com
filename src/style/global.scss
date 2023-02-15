@@ -363,29 +363,30 @@ ul.icon-list {
 	color: color(blue, 200);
 }
 
-.pr1 {
-	padding: padding(1) 0 0 0;
-}
-.pr1 {
-	padding: padding(2) 0 0 0;
-}
-.pr1 {
-	padding: padding(3) 0 0 0;
-}
-.pr1 {
-	padding: padding(4) 0 0 0;
-}
-.pr1 {
-	padding: padding(5) 0 0 0;
+.blue-700 {
+	color: color(blue, 700);
 }
 
 .flex {
 	display: flex;
 }
 
-.portfolio-svg {
-	display: inline-block;
-	height: auto;
-	margin: 1rem;
-	max-width: 380px;
+.quarter-fold-panel {
+	@include mq("lg") {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		gap: 2rem;
+	}
+	h3 {
+		padding: spacing(4) 0 spacing(3);
+	}
+	svg {
+		display: inline-block;
+		height: auto;
+		margin: spacing(4);
+		max-width: 200px;
+		@include mq("lg") {
+			max-width: 280px;
+		}
+	}
 }
