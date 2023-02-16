@@ -10,7 +10,7 @@
 		"build": "ELEVENTY_ENV=production npm-run-all -s clean build:webpack build:11ty",
 		"build:11ty": "npx @11ty/eleventy --config .eleventy.js",
 		"build:webpack": "webpack --config webpack.config.js",
-		"clean": "rm -rf ./_site/**/*",
+		"clean": "rm -rf ./_site/**/* && rm -rf ./dist/*",
 		"debug:dev": "ELEVENTY_ENV=development DEBUG=Eleventy* npm-run-all -p watch:webpack serve:11ty",
 		"debug:prod": "ELEVENTY_ENV=production DEBUG=Eleventy* npm-run-all -p watch:webpack serve:11ty",
 		"dev": "ELEVENTY_ENV=development npm-run-all -p watch:webpack serve:11ty",

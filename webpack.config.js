@@ -48,7 +48,7 @@ module.exports = {
 		],
 	},
 	output: {
-		path: __dirname + "/_site/js",
+		path: __dirname + "/_site",
 	},
 	optimization: {
 		minimizer: [
