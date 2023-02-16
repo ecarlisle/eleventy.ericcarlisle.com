@@ -5,9 +5,7 @@ const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const Image = require("@11ty/eleventy-img");
-const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const path = require("path");
-const react = require("@vitejs/plugin-react");
 
 async function imageShortcode(
 	src,
@@ -56,9 +54,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-	eleventyConfig.addPlugin(EleventyVitePlugin, {
-		plugins: [react()],
-	});
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: "./src/components/webc/*.webc",
 
@@ -100,31 +95,39 @@ module.exports = function (eleventyConfig) {
 
 	// Passthroughs
 	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
+	eleventyConfig.addPassthroughCopy("src/android-chrome-*");
+	eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+	eleventyConfig.addPassthroughCopy("src/fonts/*");
+	eleventyConfig.addPassthroughCopy("src/favicon*");
+	eleventyConfig.addPassthroughCopy("src/images/eric-carlisle-logo.svg");
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
-	eleventyConfig.addPassthroughCopy("src/images/eric-carlisle-logo.svg");
-
+	eleventyConfig.addPassthroughCopy("src/js/**/*");
 	/*
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/speedlify-score.js": "js/speedlify-score.js",
+		"node_modules/react/cjs/react.production.js": "./js/react.production.js",
 	});
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/speedlify-score.css": "style/speedlify-score.css",
+		"node_modules/react-dom/cjs/react-dom.production.js":
+			"./js/react-dom.production.js",
+	});
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/@11ty/is-land/is-land.js": "./js/is-land.js",
 	});
 	*/
-
 	eleventyConfig.setServerOptions({
-		liveReload: true,
 		domDiff: true,
-		port: 3000,
-		//		watch: ["dist/css/main.css"],
-		showAllHosts: false,
 		encoding: "utf-8",
+		enabled: true,
+		port: 3000,
+		showAllHosts: true,
+		showVersion: true,
+		watch: ["dist/css/main.css"],
 	});
 
 	return {
 		// Control which files Eleventy will process
-		templateFormats: ["njk", "txt", "xml", "webc"],
+		templateFormats: ["njk", "txt", "xml", "webc", "webmanifest"],
 
 		// Pre-process *.md and *.html files with Nunjucks.
 		markdownTemplateEngine: "njk",
