@@ -75,6 +75,21 @@ strong {
 	font-weight: 600;
 }
 
+a.skiplink {
+	background: color(black);
+	color: color(white);
+	left: 0;
+	padding: spacing(4);
+	position: absolute;
+	top: -10rem;
+	z-index: 100;
+}
+
+a.skiplink:focus {
+	top: 0;
+	transition: top 0.3s;
+}
+
 .wrapper {
 	margin: 0 auto;
 	max-width: $max-content-width;

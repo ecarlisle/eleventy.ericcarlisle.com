@@ -81,6 +81,7 @@
   {%- include "../includes/structuredData.njk" -%}
   </head>
 <body>
+  <a href="#main-content" class="skiplink">Skip to Content</a>
   <header class="primary">
     <div class="wrapper">
       {% include "src/images/eric-carlisle-logo.svg" %}
@@ -96,7 +97,7 @@
     </div>
   </header>
   <div class="wrapper main-content-wrapper">
-    <main id="maincontent">
+    <main id="main-content">
       {{ content | safe }}
     </main>
     <aside>
