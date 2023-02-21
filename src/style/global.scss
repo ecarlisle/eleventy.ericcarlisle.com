@@ -158,6 +158,12 @@ nav.primary {
 		li {
 			padding: 0;
 			list-style-type: none;
+			@include mq("sm") {
+				padding: 0 0 0 spacing(4);
+			}
+			@include mq("md") {
+				padding: 0 0 0 spacing(5);
+			}
 			&.active a {
 				text-decoration: underline;
 				text-decoration-color: color(blue, 300);
@@ -165,12 +171,6 @@ nav.primary {
 			a {
 				color: color(white);
 				display: inline-block;
-				@include mq("sm") {
-					padding: 0 0 0 spacing(4);
-				}
-				@include mq("md") {
-					padding: 0 0 0 spacing(5);
-				}
 				&:hover {
 					text-decoration: underline;
 				}
