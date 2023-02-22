@@ -14,7 +14,7 @@ module.exports = {
 				test: /\.woff2$/i,
 				type: "asset/resource",
 				generator: {
-					filename: "../fonts/[name][ext]",
+					filename: "fonts/[name][ext]",
 				},
 			},
 			{
@@ -38,6 +38,16 @@ module.exports = {
 							},
 						},
 					},
+					/*
+					{
+						loader: "resolve-url-loader",
+						options: {
+							debug: true,
+							root: "/",
+						},
+					},
+
+					*/
 					{
 						loader: "sass-loader",
 						options: {
@@ -49,7 +59,7 @@ module.exports = {
 		],
 	},
 	output: {
-		path: __dirname + "/dist/js",
+		path: __dirname + "/_site",
 	},
 	optimization: {
 		minimize: true,
@@ -64,7 +74,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: "../css/main.css",
+			filename: "../dist/css/main.css",
 			linkType: false,
 		}),
 	],

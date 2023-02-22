@@ -95,8 +95,9 @@ module.exports = function (eleventyConfig) {
 
 	// Passthroughs
 	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
-	eleventyConfig.addPassthroughCopy({ "dist/fonts/*": "fonts" });
+	eleventyConfig.addPassthroughCopy({ "fonts/*": "fonts" });
 	eleventyConfig.addPassthroughCopy({ "dist/js/main.js": "js/main.js" });
+	//eleventyConfig.addPassthroughCopy({ "dist/**/*": "./" });
 	eleventyConfig.addPassthroughCopy("src/android-chrome-*");
 	eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 	eleventyConfig.addPassthroughCopy("src/favicon*");
