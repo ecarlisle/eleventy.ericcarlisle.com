@@ -10,6 +10,7 @@ module.exports = {
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
 	],
+	ignorePatterns: ["_site/**/*"],
 	overrides: [],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
