@@ -1,6 +1,7 @@
 /*eslint @typescript-eslint/no-var-requires:0*/
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const environment = process.env.ELEVENTY_ENV;
 
@@ -13,7 +14,7 @@ module.exports = {
 				test: /\.woff2$/i,
 				type: "asset/resource",
 				generator: {
-					filename: "fonts/[name][ext]",
+					filename: "../fonts/[name][ext]",
 				},
 			},
 			{
@@ -48,10 +49,12 @@ module.exports = {
 		],
 	},
 	output: {
-		path: __dirname + "/_site",
+		path: __dirname + "/dist/js",
 	},
 	optimization: {
+		minimize: true,
 		minimizer: [
+			new TerserPlugin({ test: /\.js(\?.*)?$/i }),
 			new CssMinimizerPlugin({
 				minimizerOptions: {
 					preset: require.resolve("cssnano-preset-default"),
@@ -61,7 +64,7 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: "../dist/css/main.css",
+			filename: "../css/main.css",
 			linkType: false,
 		}),
 	],
