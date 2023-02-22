@@ -15,7 +15,7 @@
 		"debug:prod": "ELEVENTY_ENV=production DEBUG=Eleventy* npm-run-all -p watch:webpack serve:11ty",
 		"dev": "ELEVENTY_ENV=development npm-run-all -p watch:webpack serve:11ty",
 		"serve:11ty": "npx @11ty/eleventy --config .eleventy.js --serve --incremental",
-		"serve:prod": "serve _site",
+		"serve": "serve _site",
 		"test:prettier": "prettier --config .prettierrc.json --check **",
 		"watch:webpack": "webpack --config webpack.config.js --watch"
 	},
@@ -62,11 +62,13 @@
 		"style-loader": "^3.3.1",
 		"stylelint": "^14.16.0",
 		"stylelint-config-standard-scss": "^6.1.0",
+		"terser-webpack-plugin": "^5.3.6",
 		"vite": "^4.1.1",
 		"webpack": "^5.75.0",
 		"webpack-cli": "^5.0.1"
 	},
 	"dependencies": {
+		"lite-youtube-embed": "^0.2.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
 	}
