@@ -95,14 +95,14 @@ module.exports = function (eleventyConfig) {
 
 	// Passthroughs
 	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
+	eleventyConfig.addPassthroughCopy({ "dist/fonts/*": "fonts" });
+	eleventyConfig.addPassthroughCopy({ "dist/js/main.js": "js/main.js" });
 	eleventyConfig.addPassthroughCopy("src/android-chrome-*");
 	eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
-	eleventyConfig.addPassthroughCopy("src/fonts/*");
 	eleventyConfig.addPassthroughCopy("src/favicon*");
 	eleventyConfig.addPassthroughCopy("src/images/eric-carlisle-logo.svg");
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
-	eleventyConfig.addPassthroughCopy("src/js/**/*");
 	/*
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/react/cjs/react.production.js": "./js/react.production.js",
