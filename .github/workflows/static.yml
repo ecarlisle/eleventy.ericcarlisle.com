@@ -30,20 +30,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkouk out repository so workflow can access it.
         uses: actions/checkout@v3
-      - name: Set up Node v18.12.1
+      - name: Set up Node v18.12.1. Cache npm dependencies.
         uses: actions/setup-node@v3
         with:
           node-version: 18.12.1
+          cache: "npm"
+      # Clean install npm dependencies.
       - run: npm ci
+      # Run npm script to build Eleventy site.
       - run: npm run build
-      - name: Setup Pages
+      - name: Setup Github Pages
         uses: actions/configure-pages@v2
-      - name: Upload artifact
+      - name: Upload ./_site folder to Github Pages.
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload site folder
           path: "./_site"
       - name: Deploy to GitHub Pages
         id: deployment
