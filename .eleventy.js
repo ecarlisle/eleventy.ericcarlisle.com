@@ -103,6 +103,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/favicon*");
 	eleventyConfig.addPassthroughCopy("src/images/eric-carlisle-logo.svg");
 	eleventyConfig.addPassthroughCopy("src/images/og/*");
+	eleventyConfig.addPassthroughCopy("src/images/icons/*");
 	eleventyConfig.addPassthroughCopy("src/images/profile/*");
 	/*
 	eleventyConfig.addPassthroughCopy({
