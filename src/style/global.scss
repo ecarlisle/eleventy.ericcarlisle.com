@@ -36,7 +36,7 @@ h2 {
 		color: map-get($colors, black);
 		text-decoration: none;
 		&:hover {
-			color: map-get($colors, black);
+			color: map-get($colors, blue, 700);
 			text-decoration: none;
 		}
 	}
@@ -69,25 +69,39 @@ a {
 		text-decoration: underline;
 		text-decoration-color: color(blue, 300);
 	}
+
+	&.skiplink {
+		background: color(black);
+		color: color(white);
+		left: 0;
+		padding: spacing(4);
+		position: absolute;
+		top: -10rem;
+		z-index: 100;
+	}
+
+	&.skiplink:focus {
+		top: 0;
+		transition: top 0.3s;
+	}
+	/*
+	&.external {
+		&::after {
+			background: url("../images/icons/external-link.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			content: "";
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: 0 0 0 spacing(3);
+		}
+	}
+  */
 }
 
 strong {
 	font-weight: 600;
-}
-
-a.skiplink {
-	background: color(black);
-	color: color(white);
-	left: 0;
-	padding: spacing(4);
-	position: absolute;
-	top: -10rem;
-	z-index: 100;
-}
-
-a.skiplink:focus {
-	top: 0;
-	transition: top 0.3s;
 }
 
 .wrapper {
@@ -164,15 +178,16 @@ nav.primary {
 			@include mq("md") {
 				padding: 0 0 0 spacing(5);
 			}
-			&.active a {
-				text-decoration: underline;
-				text-decoration-color: color(blue, 300);
-			}
 			a {
 				color: color(white);
 				display: inline-block;
+				text-decoration: none;
 				&:hover {
 					text-decoration: underline;
+				}
+				&.active {
+					text-decoration: underline;
+					text-decoration-color: color(blue, 300);
 				}
 			}
 		}
