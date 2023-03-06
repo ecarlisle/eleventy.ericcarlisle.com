@@ -43,8 +43,8 @@
     ]
   }
 </script>
-{% if isHome === false %}
-{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: false, allowMissing: true }) %}
+{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { allowMissing: true, includeSelf: true }) %}
+{% if breadcrumbs.length > 0 %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
