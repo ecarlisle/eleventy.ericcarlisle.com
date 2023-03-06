@@ -3,6 +3,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
@@ -54,6 +55,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: "./src/components/webc/*.webc",
 

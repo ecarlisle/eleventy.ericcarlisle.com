@@ -54,14 +54,14 @@
     <meta name="twitter:site" content="{{site.social.Twitter.username}}" />
     <meta name="twitter:image:alt" content="{{og_image.alt}}">
 
-  {% if site.environment === "production" %}
-    {% set css %}
+  {%- if site.environment === "production" -%}
+    {%- set css -%}
       {% include "../../dist/css/main.css" %}
-    {% endset %}
+    {%- endset -%}
     <style>{{ css }}</style>
-  {% else %}
+  {%- else -%}
     <link rel="stylesheet" href="/css/main.css">
-  {% endif %}
+  {%- endif -%}
 
   <!-- Structured Data -->
   {%- include "../includes/structuredData.njk" -%}
@@ -83,16 +83,8 @@
   <a href="#main-content" class="skiplink">Skip to Content</a>
   <header class="primary">
     <div class="wrapper">
-      {% include "src/images/eric-carlisle-logo.svg" %}
-      <nav class="primary">
-        {% set navPages = collections.all | eleventyNavigation %}
-        <ul>
-          {%- for entry in navPages %}
-          <li><a {% if entry.url==page.url %} class="active"{% endif %}href="{{ entry.url }}">{{ entry.title }}</a>
-            </li>
-            {%- endfor %}
-        </ul>
-      </nav>
+      {%- include "src/images/eric-carlisle-logo.svg" -%}
+      {%- include "../includes/primaryNavigation.njk" -%}
     </div>
   </header>
   <div class="wrapper main-content-wrapper">
@@ -120,7 +112,7 @@
         </a>
         {%- endif -%}
         {% endfor -%}
-        <a href="/sitemap.xml" aria-label="RSS Feed">
+        <a href="/feed.xml" aria-label="RSS Feed">
           <svg width="24" height="24" viewBox="0 0 32 32">
             <use href="#icon-rss"></use>
           </svg>
