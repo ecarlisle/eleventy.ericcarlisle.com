@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Preconnects -->
-    <link rel="preconnect" href="/fonts/exo2-semibold.woff2">
-    <link rel="preconnect" href="/fonts/poppins-regular.woff2">
-    <link rel="preconnect" href="/fonts/poppins-bold.woff2">
-    <link rel="preconnect" href="/fonts/robotomono-regular.woff2">
+    <link rel="preload" href="/fonts/exo2-semibold.woff2">
+    <link rel="preload" href="/fonts/poppins-regular.woff2">
+    <link rel="preload" href="/fonts/poppins-bold.woff2">
+    <link rel="preload" href="/fonts/robotomono-regular.woff2">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -105,7 +105,7 @@
       <div class="social-icons">
         {%- for name, item in site.social %}
         {%- if item.url -%}
-        <a href="{{item.url}}" aria-label="Eric's {{name}} Profile">
+        <a href="{{item.url}}" aria-label="Eric's {{name}} Profile"{% if name.toLowerCase() == "github" %} rel="me"{% endif %}>
           <svg width="24" height="24" viewBox="0 0 32 32">
             <use href="#icon-social-{{name.toLowerCase()}}"></use>
           </svg>
