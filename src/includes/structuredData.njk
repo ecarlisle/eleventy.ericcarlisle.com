@@ -43,7 +43,8 @@
     ]
   }
 </script>
-{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { allowMissing: true, includeSelf: false }) %}
+{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key,
+  { allowMissing: true, includeSelf: false }) %}
 {% if breadcrumbs.length > 0 %}
 <script type="application/ld+json">
 {
@@ -51,7 +52,7 @@
   "@type": "BreadcrumbList",
   "itemListElement":
   [
-    {% for crumb in breadcrumbs %} 
+    {% for crumb in breadcrumbs %}
     {
       "@type": "ListItem",
       "position": {{loop.index}},
