@@ -81,7 +81,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: "exo2";
 	src: url("../fonts/exo2-semibold.woff2") format(woff2);
 	font-weight: 600;
@@ -89,7 +89,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: poppins;
 	font-style: normal;
 	font-weight: 400;
@@ -97,7 +97,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: poppins;
 	font-style: normal;
 	font-weight: 600;
@@ -105,7 +105,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: robotomono;
 	font-style: normal;
 	font-weight: 400;
