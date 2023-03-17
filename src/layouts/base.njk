@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
   <head>
+    <!-- Preconnects -->
+    <link rel="preload" href="{{ site.hostname }}/fonts/exo2-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/poppins-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/robotomono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://www.googletagmanager.com/gtm.js?id=GTM-5XHZVF" rel="preload" as="script">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com/" >
+
     {%- if site.environment === 'production' -%}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- Google Tag Manager -->
@@ -12,11 +20,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Preconnects -->
-    <link rel="preload" href="{{ site.hostname }}/fonts/exo2-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ site.hostname }}/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ site.hostname }}/fonts/poppins-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ site.hostname }}/fonts/robotomono-regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
