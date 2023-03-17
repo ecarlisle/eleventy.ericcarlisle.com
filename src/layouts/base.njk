@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Preconnects -->
-    <link rel="preload" href="/fonts/exo2-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/poppins-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/robotomono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/exo2-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/poppins-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.hostname }}/fonts/robotomono-regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -97,13 +97,18 @@
     </main>
     <aside>
       <picture class="profile-image">
-        <source srcset="/images/profile/eric-carlisle_512.webp 2x,
-                        /images/profile/eric-carlisle_512.webp 1x" type="image/webp" />
-        <source srcset="/images/profile/eric-carlisle_512.avif 2x,
-                        /images/profile/eric-carlisle_512.avif 1x" type="image/avif" />
-        <img srcset="/images/profile/eric-carlisle_512.jpg 2x,
-                        /images/profile/eric-carlisle_512.jpg 1x" type="image/jpeg" width="256" height="256"
-          alt="Eric Carlisle" />
+        <source srcset="{{ site.hostname }}/images/profile/eric-carlisle_512.webp 2x,
+                        {{ site.hostname }}/images/profile/eric-carlisle_512.webp 1x"
+                type="image/webp" />
+        <source srcset="{{ site.hostname }}/images/profile/eric-carlisle_512.avif 2x,
+                        {{ site.hostname }}/images/profile/eric-carlisle_512.avif 1x"
+                type="image/avif" />
+        <img srcset="{{ site.hostname }}/images/profile/eric-carlisle_512.jpg 2x,
+                     {{ site.hostname }}/images/profile/eric-carlisle_512.jpg 1x"
+             alt="Eric Carlisle"
+             height="256"
+             type="image/jpeg"
+             width="256" />
       </picture>
 
       <div class="social-icons">
