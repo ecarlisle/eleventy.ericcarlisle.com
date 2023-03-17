@@ -80,16 +80,18 @@ $border-radius: (
 	@return map-get($border-radius, $key);
 }
 
+/*
 @font-face {
-	font-display: optional;
+	font-display: swap;
 	font-family: "exo2";
 	src: url("../fonts/exo2-semibold.woff2") format(woff2);
 	font-weight: 600;
 	font-style: normal;
 }
+*/
 
 @font-face {
-	font-display: optional;
+	font-display: swap;
 	font-family: poppins;
 	font-style: normal;
 	font-weight: 400;
@@ -97,7 +99,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-display: optional;
+	font-display: swap;
 	font-family: poppins;
 	font-style: normal;
 	font-weight: 600;
@@ -105,7 +107,7 @@ $border-radius: (
 }
 
 @font-face {
-	font-display: optional;
+	font-display: swap;
 	font-family: robotomono;
 	font-style: normal;
 	font-weight: 400;
@@ -113,9 +115,6 @@ $border-radius: (
 }
 
 $font-families: (
-	site-title: (
-		"exo2",
-	),
 	headings: (
 		poppins,
 	),
