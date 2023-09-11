@@ -19,7 +19,7 @@ async function imageShortcode(
 		widths: widths,
 		formats: ["webp", "avif", "jpeg"],
 		urlPath: "/images/posts",
-		outputDir: "./_site/images/posts",
+		outputDir: "./_docs/images/posts",
 		filenameFormat: function (id, src, width, format, options) {
 			const extension = path.extname(src);
 			const name = path.basename(src, extension);
@@ -142,7 +142,7 @@ module.exports = function (eleventyConfig) {
 			includes: "includes",
 			layouts: "layouts",
 			data: "data",
-			output: "_site",
+			output: "_docs",
 		},
 	};
 };
