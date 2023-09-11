@@ -19,7 +19,7 @@ async function imageShortcode(
 		widths: widths,
 		formats: ["webp", "avif", "jpeg"],
 		urlPath: "/images/posts",
-		outputDir: "./_docs/images/posts",
+		outputDir: "./docs/images/posts",
 		filenameFormat: function (id, src, width, format, options) {
 			const extension = path.extname(src);
 			const name = path.basename(src, extension);
@@ -97,7 +97,7 @@ module.exports = function (eleventyConfig) {
 
 	// Passthroughs
 	eleventyConfig.addPassthroughCopy({ "dist/css/main.css": "css/main.css" });
-	eleventyConfig.addPassthroughCopy({ "fonts/*": "fonts" });
+	eleventyConfig.addPassthroughCopy({ "src/fonts/*": "fonts" });
 	eleventyConfig.addPassthroughCopy({ "dist/js/main.js": "js/main.js" });
 	//eleventyConfig.addPassthroughCopy({ "dist/**/*": "./" });
 	eleventyConfig.addPassthroughCopy("src/android-chrome-*");
@@ -142,7 +142,7 @@ module.exports = function (eleventyConfig) {
 			includes: "includes",
 			layouts: "layouts",
 			data: "data",
-			output: "_docs",
+			output: "docs",
 		},
 	};
 };
